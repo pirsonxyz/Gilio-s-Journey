@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ce4g3l8pscns8"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3opcm"]
+[ext_resource type="Texture2D" uid="uid://1safu2i0ev1" path="res://assets/Striker/spr_StrikerIdle_strip.png" id="1_vekwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7m00"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(97, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eofbi"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(194, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmnpu"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(291, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v67g4"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(388, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl6gt"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(485, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4coj"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(582, 0, 97, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnmd7"]
+atlas = ExtResource("1_vekwx")
+region = Rect2(0, 0, 97, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubxql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7m00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eofbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmnpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v67g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl6gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4coj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnmd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnmd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7m00")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4s0r6"]
+radius = 27.6
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, 4)
+script = ExtResource("1_3opcm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(194, 53)
+scale = Vector2(3.14723, 2.37305)
+sprite_frames = SubResource("SpriteFrames_ubxql")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.150535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(179, 72)
+shape = SubResource("CircleShape2D_4s0r6")
