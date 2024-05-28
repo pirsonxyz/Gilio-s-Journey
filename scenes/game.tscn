@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chmbu74ava2st"]
 
 [ext_resource type="PackedScene" uid="uid://ce4g3l8pscns8" path="res://scenes/player.tscn" id="1_wrnqb"]
-[ext_resource type="Texture2D" uid="uid://xdmwbm2cffs0" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_eb114"]
+[ext_resource type="Texture2D" uid="uid://xdmwbm2cffs0" path="res://assets/platformer_assets/sprites/world_tileset.png" id="2_eb114"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ya5j"]
 texture = ExtResource("2_eb114")
