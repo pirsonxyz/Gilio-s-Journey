@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://chmbu74ava2st"]
+[gd_scene load_steps=8 format=3 uid="uid://chmbu74ava2st"]
 
 [ext_resource type="PackedScene" uid="uid://ce4g3l8pscns8" path="res://scenes/player.tscn" id="1_wrnqb"]
 [ext_resource type="Texture2D" uid="uid://cf4jlf4285h80" path="res://assets/tileset.png" id="3_5cf21"]
+[ext_resource type="PackedScene" uid="uid://cwwpxm3cmrcly" path="res://scenes/killzone.tscn" id="4_3hb2d"]
+[ext_resource type="PackedScene" uid="uid://fulfqxmah2sb" path="res://scenes/background.tscn" id="4_5pgg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0gt0"]
 texture = ExtResource("3_5cf21")
@@ -461,15 +463,31 @@ texture = ExtResource("3_5cf21")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_g0gt0")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpmjl"]
+distance = 6.0
+
 [node name="Game" type="Node2D"]
-position = Vector2(17, 2)
+position = Vector2(311, 358)
 
 [node name="Player" parent="." instance=ExtResource("1_wrnqb")]
-position = Vector2(-170, -45)
+z_index = 1
+position = Vector2(-932, -305)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(183, 39)
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = 1
+position = Vector2(-1, 0)
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_q46k8")
 format = 2
-layer_0/tile_data = PackedInt32Array(393192, 1, 9, 393193, 65537, 9, 393194, 131073, 9, 393195, 196609, 9, 393196, 262145, 9, 393197, 327681, 9, 393198, 393217, 9, 393199, 458753, 9, 393200, 524289, 9, 393201, 589825, 9, 393202, 655361, 9, 393203, 720897, 9, 393204, 786433, 9, 393205, 851969, 9, 393206, 917505, 9, 393207, 983041, 9, 393208, 1048577, 9, 393209, 1114113, 9, 393210, 1, 9, 393211, 65537, 9, 393212, 131073, 9, 393213, 196609, 9, 393214, 262145, 9, 393215, 327681, 9, 327680, 393217, 9, 327681, 458753, 9, 327682, 524289, 9, 327683, 589825, 9, 327684, 655361, 9, 327685, 720897, 9, 327686, 786433, 9, 327687, 851969, 9, 327688, 917505, 9, 327689, 983041, 9, 327690, 1048577, 9, 327691, 1114113, 9, 327692, 1, 9, 327693, 65537, 9, 327694, 131073, 9, 327695, 196609, 9, 327696, 262145, 9, 327697, 327681, 9, 327698, 393217, 9, 327699, 458753, 9, 327700, 524289, 9, 327701, 589825, 9, 327702, 655361, 9, 327703, 720897, 9, 327704, 786433, 9, 327705, 851969, 9, 327706, 917505, 9, 327707, 983041, 9, 327708, 1048577, 9, 327709, 1114113, 9, 21, 327681, 4, 22, 393217, 4, 23, 458753, 4, 24, 524289, 4, 25, 589825, 4)
+
+[node name="Killzone" parent="." instance=ExtResource("4_3hb2d")]
+position = Vector2(-1100, 297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-10, -10)
+shape = SubResource("WorldBoundaryShape2D_rpmjl")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_5pgg2")]

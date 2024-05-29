@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://fulfqxmah2sb"]
+
+[ext_resource type="Texture2D" uid="uid://ktx13822dwbx" path="res://assets/Martial Hero 2/Sprites/Background.png" id="1_w6qf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qunmo"]
+size = Vector2(3654, 121)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(-883, -1278)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1017, -775)
+scale = Vector2(4, 2.663)
+texture = ExtResource("1_w6qf7")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(846, 1227.5)
+shape = SubResource("RectangleShape2D_qunmo")
