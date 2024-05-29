@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://mqrkpqeymqvo"]
+
+[ext_resource type="Texture2D" uid="uid://4n3g73s0c7w0" path="res://assets/NightBorne/NightBorne.png" id="1_8x0pg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqv5m"]
+atlas = ExtResource("1_8x0pg")
+region = Rect2(0, 0, 83, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc73f"]
+atlas = ExtResource("1_8x0pg")
+region = Rect2(83, 0, 83, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykv8q"]
+atlas = ExtResource("1_8x0pg")
+region = Rect2(166, 0, 83, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gh5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqv5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc73f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykv8q")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 3.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(164, 66)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6gh5q")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.666115

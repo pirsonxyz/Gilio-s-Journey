@@ -13,7 +13,6 @@ config_version=5
 config/name="Gilio's Journey"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/image="res://icon2.png"
 config/icon="res://icon.png"
 
 [input]
